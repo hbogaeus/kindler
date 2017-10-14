@@ -16,6 +16,7 @@ config :kindler, KindlerWeb.Endpoint,
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",
+  colors: [enabled: true],
   metadata: [:request_id]
 
 # Import environment specific config. This must remain at the bottom
