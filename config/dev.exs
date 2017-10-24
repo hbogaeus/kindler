@@ -40,6 +40,9 @@ config :kindler, KindlerWeb.Endpoint,
     ]
   ]
 
+config :kindler, Kindler.Mailer,
+  adapter: Swoosh.Adapters.Local
+
 # Do not include metadata nor timestamps in development logs
 config :logger, :console, format: "[$level] $message\n"
 
