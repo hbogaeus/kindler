@@ -6,11 +6,10 @@ defmodule Kindler do
   Contexts are also responsible for managing your data, regardless
   if it comes from the database, an external API or others.
   """
-  require Logger
+  alias Kindler.{Emails, Mailer}
 
   def send_to_kindle(file) do
-    email = Kindler.Emails.kindle(file)
-    Logger.info "#{inspect email.attachments}"
-    Kindler.Mailer.deliver(email)
+    Emails.kindle(file) 
+    |> Mailer.deliver
   end
 end
